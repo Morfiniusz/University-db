@@ -1,3 +1,4 @@
+#pragma once
 #include "person.hpp"
 
 class Student : public Person {
