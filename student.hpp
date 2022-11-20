@@ -10,8 +10,6 @@ public:
     int getIndexNo() const {return indexNo_;};
     void setIndexNo(const int& indexNo) {indexNo_ = indexNo;};
 
-    void CreatePerson() override;
-
 private:
     int indexNo_{};
 };

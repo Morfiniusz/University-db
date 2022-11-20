@@ -24,8 +24,6 @@ public:
     void setPostalCode(const std::string& postalCode) {postalCode_ = postalCode;};
     void setCity(const std::string& city) {city_ = city;};
 
-    virtual void CreatePerson() = 0;
-
 private:
     std::string name_ {};
     std::string surname_{};
