@@ -5,14 +5,14 @@
 class Student : public Person {
 public:
     Student(){}
-    Student(std::string, std::string, std::string, std::string, std::string, std::string, std::string, size_t);
+    Student(std::string, std::string, std::string, std::string, std::string, std::string, std::string, std::string);
     ~Student(){std::cout << "Student D'tor called\n";}
 
-    int getIndexNo() const {return indexNo_;};
-    void setIndexNo(const int& indexNo) {indexNo_ = indexNo;};
+    std::string getIndexNo() const {return indexNo_;};
+    void setIndexNo(const std::string& indexNo) {indexNo_ = indexNo;};
 
 
 
 private:
-    int indexNo_{};
+    std::string indexNo_{};
 };
