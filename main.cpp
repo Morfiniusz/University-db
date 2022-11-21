@@ -13,6 +13,22 @@ enum class Menu {
     , Exit
 };
 
+bool checkPostalCode(const std::string& str) {
+    size_t count{0};
+    if(str.size() != 6) {
+        return false;
+    }
+    for(int i = 0; i < str.size(); ++i) {
+       if(std::isdigit(str[i]) == true) {
+            ++count;
+       }
+    }
+    if(count == 5 && str[2] == '-') {
+        return true;
+    }
+    return false;
+}
+
 bool checkPesel(const std::string& str) {
     if(str.length() != 11) {
         return false;
@@ -58,6 +74,11 @@ void CreateStudent(std::vector<Student *>& vec) {
     std::cout << "Type postal code: ";
     std::string postalCode{};
     std::cin >> postalCode;
+    while(checkPostalCode(postalCode) == false) {
+        std::cout<< "Wrong postal code, use format xx-xxx where x is digit!\n";
+        std::cout << "Type postal code: ";
+        std::cin >> postalCode;
+    }
     student->setPostalCode(postalCode);
     std::cout << "Type city: ";
     std::string city{};
@@ -79,7 +100,6 @@ int main() {
     std::vector<Student *> vec_of_StudentsP{};
     std::cout << "New Student Creator\n";
     CreateStudent(vec_of_StudentsP);
-    //CreateStudent(vec_of_StudentsP);
     
     // Student student {"Łukasz", "Meisnerowski", "male", 48391203081, "Obornicka 6/15", "64-500", "Szamotuły", 12345};
     //std::cout << "Name: " << student.getName() + "\n" << "Surname: " << student.getSurname() + "\n" << "Sex: " << student.getSex() + "\n" << "Pesel: " << student.getPESEL() + "\n" << "Street: " << student.getStreet() + "\n" 
