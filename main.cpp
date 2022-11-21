@@ -28,7 +28,7 @@ void CreateStudent(std::vector<Student *>& vec) {
     std::cin >> sex;
     student->setSex(sex);
     std::cout << "Type PESEL no: ";
-    size_t pesel{};
+    std::string pesel{};
     std::cin >> pesel;
     student->setPESEL(pesel);
     std::cout << "Type street: ";
