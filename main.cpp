@@ -1,6 +1,7 @@
 
 #include "person.hpp"
 #include "student.hpp"
+#include <algorithm>
 #include <iostream>
 #include <memory>
 #include <string>
