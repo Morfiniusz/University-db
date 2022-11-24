@@ -11,6 +11,7 @@ set(FLAGS
 set(SRC 
     person.cpp
     student.cpp
+    dataBase.cpp
 )
 
 add_executable(${PROJECT_NAME} main.cpp)
