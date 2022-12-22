@@ -6,7 +6,7 @@ class Person {
 public:
     Person(){}
     Person (std::string, std::string, std::string, std::string, std::string, std::string, std::string);
-    ~Person(){std::cout << "Person D'tor called\n";}
+    ~Person(){}
 
     std::string getName() const {return name_;};
     std::string getSurname() const {return surname_;};

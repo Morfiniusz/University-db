@@ -9,4 +9,4 @@ Person::Person(std::string name, std::string surname,std::string sex, std::strin
 ,   street_(street)
 ,   postalCode_(postalCode)
 ,   city_(city)
-{std::cout << "Person C'tor called\n";}
+{}
