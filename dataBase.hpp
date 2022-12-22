@@ -1,6 +1,6 @@
 #pragma once
-#include "person.hpp"
 #include "student.hpp"
+#include <algorithm>
 #include <ostream>
 #include <vector>
 
@@ -10,7 +10,6 @@ public:
     dataBase (std::vector<Student *> dataBase) 
     : dataBase_(dataBase)
     {}
-    
     ~dataBase(){}
 
     void CreateStudent(std::vector<Student *>& );

@@ -7,7 +7,7 @@ Student::Student(std::string s_name, std::string s_surname,std::string s_sex, st
 , indexNo_(indexNo)
 {}
 
-    std::ostream& operator<<(std::ostream& os,  Student* student) {
+std::ostream& operator<<(std::ostream& os,  Student* student) {
     os << "Name: " << student->getName() + "\n" 
         << "Surname: " << student->getSurname() + "\n"
         << "Gender: " << student->getSex() + "\n"
@@ -17,4 +17,4 @@ Student::Student(std::string s_name, std::string s_surname,std::string s_sex, st
         << "City: " << student->getCity() + "\n"
         << "Index No: " << student->getIndexNo() << "\n";
     return os;
-    }
+}
