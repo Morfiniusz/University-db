@@ -86,9 +86,14 @@ void dataBase::CreateStudent(std::vector<Student *>& vec) {
     vec.push_back(student);
 }
 
-void dataBase::printStudentData(std::vector<Student *>& vec) const {
+void dataBase::printStudentData(const std::vector<Student *>& vec) const {
     for (const auto& el : vec) {
         std::cout << el;
     }
     std::cout << '\n';
+}
+
+void dataBase::sortBySurname(std::vector<Student *>& vec) const {
+    auto sortSurname = [](Student* student1, Student* student2){return student1->getSurname() < student2->getSurname(); };
+    std::sort(begin(vec), end(vec), sortSurname);
 }

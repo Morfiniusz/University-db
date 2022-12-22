@@ -8,13 +8,13 @@ Student::Student(std::string s_name, std::string s_surname,std::string s_sex, st
 {}
 
 std::ostream& operator<<(std::ostream& os,  Student* student) {
-    os << "Name: " << student->getName() + "\n" 
-        << "Surname: " << student->getSurname() + "\n"
-        << "Gender: " << student->getSex() + "\n"
-        << "Pesel: " << student->getPESEL() + "\n"
-        << "Street: " << student->getStreet() + "\n" 
-        << "Postal code: " << student->getPostalCode() + "\n"
-        << "City: " << student->getCity() + "\n"
+    os << "Name: " << student->getName() + " | " 
+        << "Surname: " << student->getSurname() + " | "
+        << "Gender: " << student->getSex() + " | "
+        << "Pesel: " << student->getPESEL() + " | "
+        << "Street: " << student->getStreet() + " | " 
+        << "Postal code: " << student->getPostalCode() + " | "
+        << "City: " << student->getCity() + " | "
         << "Index No: " << student->getIndexNo() << "\n";
     return os;
 }

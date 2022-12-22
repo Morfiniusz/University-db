@@ -13,7 +13,8 @@ public:
     ~dataBase(){}
 
     void CreateStudent(std::vector<Student *>& );
-    void printStudentData(std::vector<Student *>& ) const;
+    void printStudentData(const std::vector<Student *>& ) const;
+    void sortBySurname(std::vector<Student *>& ) const;
 
 private:
     std::vector<Student *> dataBase_ {};
