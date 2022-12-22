@@ -7,6 +7,16 @@
 #include <string>
 #include <vector>
 
+void findBySurname(const std::vector<Student* > vec) {
+    std::string surname{};
+
+    std::cin >> surname;
+    
+    auto isEven = [&surname](Student* student){return student->getSurname() == surname;};
+    auto result = std::find_if(begin(vec), end(vec), isEven);
+    (result != end(vec)) ? std::cout << "Student founded in data base!\n" << *result << '\n' : std::cout << "Such student does not exist!\n";
+}
+
 int main() {
     Student student1 {"Łukasz", "Meisnerowski", "male", "48391203081", "Obornicka 6/15", "64-500", "Szamotuły", "123455"};
     Student student2 {"Katarzyna", "Januszko", "female", "87988745123", "Januszkopwa 4/23", "88-666", "Wrocław", "778899"};
@@ -15,6 +25,7 @@ int main() {
     Student student5 {"Klementyna", "Klementyńska", "female", "19287344457", "Klementyńska 18", "88-666", "Wrocław", "156680"};
     Student student6 {"Konrad", "Konradzki", "male", "12881244512", "Konradzka 12", "33-222", "Białystok", "459981"};
     Student student7 {"Zuzanna", "Zuzanowska", "female", "66884422512", "Zuzannowa 66", "22-888", "Gostyń", "001287"};
+
     std::vector<Student*> vec;
 
     vec.push_back(&student1);
@@ -34,15 +45,7 @@ int main() {
     std::cout << "Print: \n";
     db.printStudentData(vec);
     //db.Print(vec);
-    // Student student {"Łukasz", "Meisnerowski", "male", 48391203081, "Obornicka 6/15", "64-500", "Szamotuły", 12345};
-    //std::cout << "Name: " << student.getName() + "\n" << "Surname: " << student.getSurname() + "\n" << "Sex: " << student.getSex() + "\n" << "Pesel: " << student.getPESEL() + "\n" << "Street: " << student.getStreet() + "\n" 
-    //           << "Postal code: " << student.getPostalCode() + "\n"<< "City: " << student.getCity() + "\n" << "Index No: " << student.getIndexNo() << "\n";
-    
-    std::vector<std::string> vec3 {"Ala", "ma", "kota", "a" , "kot", "Ale"};
-    std::sort(begin(vec3), end(vec3));
-    for (const auto& el : vec3) {
-        std::cout << el << ' ';
-    }
-    std::cout << '\n';
+    std::cout << "Finding by surname\n";
+    findBySurname(vec);
     return 0;
 }
