@@ -29,7 +29,7 @@ int main() {
     //db.CreateStudent(vec);
     //db.CreateStudent(vec);
     //db.CreateStudent(vec);
-    std::cout << "Sorting!";
+    std::cout << "Sorting!\n";
     db.sortBySurname(vec);
     std::cout << "Print: \n";
     db.printStudentData(vec);
