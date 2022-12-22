@@ -7,15 +7,6 @@
 #include <string>
 #include <vector>
 
-void findBySurname(const std::vector<Student* > vec) {
-    std::string surname{};
-
-    std::cin >> surname;
-    
-    auto isEven = [&surname](Student* student){return student->getSurname() == surname;};
-    auto result = std::find_if(begin(vec), end(vec), isEven);
-    (result != end(vec)) ? std::cout << "Student founded in data base!\n" << *result << '\n' : std::cout << "Such student does not exist!\n";
-}
 
 int main() {
     Student student1 {"Łukasz", "Meisnerowski", "male", "48391203081", "Obornicka 6/15", "64-500", "Szamotuły", "123455"};
@@ -46,6 +37,6 @@ int main() {
     db.printStudentData(vec);
     //db.Print(vec);
     std::cout << "Finding by surname\n";
-    findBySurname(vec);
+    db.findBySurname(vec);
     return 0;
 }

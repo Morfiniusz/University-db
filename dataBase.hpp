@@ -15,6 +15,7 @@ public:
     void CreateStudent(std::vector<Student *>& );
     void printStudentData(const std::vector<Student *>& ) const;
     void sortBySurname(std::vector<Student *>& ) const;
+    void findBySurname(const std::vector<Student* >& vec) const;
 
 private:
     std::vector<Student *> dataBase_ {};

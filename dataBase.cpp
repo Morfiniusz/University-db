@@ -23,14 +23,14 @@ bool checkPesel(const std::string& str) {
     if(str.length() != 11) {
         return false;
     }
-    return std::all_of(str.begin(), str.end(), [](char c){return std::isdigit(c);});
+    return std::all_of(str.cbegin(), str.cend(), [](char c){return std::isdigit(c);});
 }
 
 bool checkIndexNo(const std::string& str) {
     if(str.length() != 6) {
         return false;
     }
-    return std::all_of(str.begin(), str.end(), [](char c){return std::isdigit(c);});
+    return std::all_of(str.cbegin(), str.cend(), [](char c){return std::isdigit(c);});
 }
 
 void dataBase::CreateStudent(std::vector<Student *>& vec) {
@@ -94,6 +94,15 @@ void dataBase::printStudentData(const std::vector<Student *>& vec) const {
 }
 
 void dataBase::sortBySurname(std::vector<Student *>& vec) const {
-    auto sortSurname = [](Student* student1, Student* student2){return student1->getSurname() < student2->getSurname(); };
+    auto sortSurname = [](const Student* student1,const Student* student2){return student1->getSurname() < student2->getSurname(); };
     std::sort(begin(vec), end(vec), sortSurname);
+}
+
+
+void dataBase::findBySurname(const std::vector<Student* >& vec) const {
+    std::string surname{};
+    std::cin >> surname;
+    auto isEven = [&surname](Student* student){return student->getSurname() == surname;};
+    auto result = std::find_if(cbegin(vec), cend(vec), isEven);
+    (result != end(vec)) ? std::cout << "Student founded in data base!\n" << *result << '\n' : std::cout << "Such student does not exist!\n";
 }
