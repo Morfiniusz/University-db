@@ -1,5 +1,6 @@
 #include "dataBase.hpp"
 #include <algorithm>
+#include <numeric>
 #include <ostream>
 #include <vector>
 
@@ -19,6 +20,13 @@ bool checkPostalCode(const std::string& str) {
     return false;
 }
 
+bool checkIndexNo(const std::string& str) {
+    if(str.length() != 6) {
+        return false;
+    }
+    return std::all_of(str.cbegin(), str.cend(), [](char c){return std::isdigit(c);});
+}
+
 bool checkPesel(const std::string& str) {
     if(str.length() != 11) {
         return false;
@@ -26,12 +34,18 @@ bool checkPesel(const std::string& str) {
     return std::all_of(str.cbegin(), str.cend(), [](char c){return std::isdigit(c);});
 }
 
-bool checkIndexNo(const std::string& str) {
-    if(str.length() != 6) {
-        return false;
+bool peselValidation(const std::string& peselNo) {
+    std::array<int,10> arr_ck {};
+    std::array<int,10> arr_wk {1, 3, 7, 9, 1, 3, 7, 9, 1, 3};
+    std::transform(begin(peselNo), end(peselNo), begin(arr_wk), begin(arr_ck), [](auto lhs, auto rhs){return (lhs - 48) * rhs;});
+    int controlNumber = 10 - (std::accumulate(begin(arr_ck), end(arr_ck), 0) % 10);
+    if((peselNo[peselNo.length() - 1] - 48) == controlNumber) {
+        return true;
     }
-    return std::all_of(str.cbegin(), str.cend(), [](char c){return std::isdigit(c);});
+    return false;
 }
+
+
 
 void dataBase::CreateStudent(std::vector<Student *>& vec) {
     Student* student = new Student();

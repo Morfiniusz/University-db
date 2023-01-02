@@ -2,15 +2,17 @@
 #include "student.hpp"
 #include "dataBase.hpp"
 #include <algorithm>
+#include <ios>
 #include <iostream>
+#include <list>
 #include <memory>
+#include <numeric>
 #include <string>
 #include <vector>
 
-
 int main() {
     Student student1 {"Łukasz", "Meisnerowski", "male", "11111111111", "Obornicka 6/15", "64-500", "Szamotuły", "123455"};
-    Student student2 {"Katarzyna", "Januszko", "female", "22222222222", "Januszkopwa 4/23", "88-666", "Wrocław", "778899"};
+    Student student2 {"Katarzyna", "Januszko", "female", "22222222222", "Januszkowa 4/23", "88-666", "Wrocław", "778899"};
     Student student3 {"Bartek", "Marciniak", "male", "33333333333", "Marciniakowa 4", "55-111", "Poznań", "556688"};
     Student student4 {"Gustaw", "Gustawski", "male", "44444444444", "Gustawska 3", "44-331", "PomyloneGary", "112234"};
     Student student5 {"Klementyna", "Klementyńska", "female", "55555555555", "Klementyńska 18", "88-666", "Wrocław", "156680"};
@@ -28,9 +30,9 @@ int main() {
     vec.push_back(&student7);
     //sort(begin(vec), end(vec), [](Student* student1, Student* student2){return student1->getSurname() < student2->getSurname();});
     dataBase db(vec);
-    //db.CreateStudent(vec);
-    //db.CreateStudent(vec);
-    //db.CreateStudent(vec);
+    db.CreateStudent(vec);
+    db.CreateStudent(vec);
+    db.CreateStudent(vec);
     std::cout << "Sorting by surname!\n";
     db.sortBySurname(vec);
     std::cout << "Print: \n";

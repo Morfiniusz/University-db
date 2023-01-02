@@ -6,7 +6,7 @@ class Student : public Person {
 public:
     Student(){}
     Student(std::string, std::string, std::string, std::string, std::string, std::string, std::string, std::string);
-    ~Student(){ std::cout << "D'tor called" << indexNo_ << '\n';}
+    ~Student(){ std::cout << "D'tor called: " << indexNo_ << '\n';}
 
     std::string getIndexNo() const {return indexNo_;};
     void setIndexNo(const std::string& indexNo) {indexNo_ = indexNo;};
