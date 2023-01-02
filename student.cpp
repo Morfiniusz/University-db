@@ -10,7 +10,7 @@ Student::Student(std::string s_name, std::string s_surname,std::string s_sex, st
 std::ostream& operator<<(std::ostream& os,  Student* student) {
     os << "Name: " << student->getName() + " | " 
         << "Surname: " << student->getSurname() + " | "
-        << "Gender: " << student->getSex() + " | "
+        << "Gender: " << student->getGender() + " | "
         << "Pesel: " << student->getPESEL() + " | "
         << "Street: " << student->getStreet() + " | " 
         << "Postal code: " << student->getPostalCode() + " | "
