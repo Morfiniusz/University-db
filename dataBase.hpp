@@ -15,7 +15,10 @@ public:
     void CreateStudent(std::vector<Student *>& );
     void printStudentData(const std::vector<Student *>& ) const;
     void sortBySurname(std::vector<Student *>& ) const;
-    void findBySurname(const std::vector<Student* >& vec) const;
+    void findBySurname(const std::vector<Student* >& ) const;
+    void sortByPESEL(std::vector<Student *>& ) const;
+    void findByPESEL(const std::vector<Student* >& ) const;
+    void deleteByIndexNumber (std::vector<Student *>& );
 
 private:
     std::vector<Student *> dataBase_ {};

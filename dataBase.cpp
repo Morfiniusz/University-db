@@ -44,9 +44,9 @@ void dataBase::CreateStudent(std::vector<Student *>& vec) {
     std::cin >> surname;
     student->setSurname(surname);
     std::cout << "Type gender: ";
-    std::string sex{};
-    std::cin >> sex;
-    student->setSex(sex);
+    std::string gender{};
+    std::cin >> gender;
+    student->setGender(gender);
     std::cout << "Type PESEL no: ";
     std::string pesel{};
     std::cin >> pesel;
@@ -94,15 +94,49 @@ void dataBase::printStudentData(const std::vector<Student *>& vec) const {
 }
 
 void dataBase::sortBySurname(std::vector<Student *>& vec) const {
-    auto sortSurname = [](const Student* student1,const Student* student2){return student1->getSurname() < student2->getSurname(); };
-    std::sort(begin(vec), end(vec), sortSurname);
+    auto findSurname = [](const Student* student1,const Student* student2){return student1->getSurname() < student2->getSurname(); };
+    std::sort(begin(vec), end(vec), findSurname);
 }
 
 
 void dataBase::findBySurname(const std::vector<Student* >& vec) const {
     std::string surname{};
+    std::cout << "Type surname to find: ";
     std::cin >> surname;
     auto isEven = [&surname](Student* student){return student->getSurname() == surname;};
     auto result = std::find_if(cbegin(vec), cend(vec), isEven);
     (result != end(vec)) ? std::cout << "Student founded in data base!\n" << *result << '\n' : std::cout << "Such student does not exist!\n";
+}
+
+void dataBase::sortByPESEL(std::vector<Student *>& vec) const {
+    auto findPESEL = [](const Student* student1,const Student* student2){return student1->getPESEL() < student2->getPESEL(); };
+    std::sort(begin(vec), end(vec), findPESEL);
+}
+
+void dataBase::findByPESEL(const std::vector<Student* >& vec) const {
+    std::string pesel{};
+    std::cout << "Type PESEL to find: "; 
+    std::cin >> pesel;
+    auto isEven = [&pesel](Student* student){return student->getPESEL() == pesel;};
+    auto result = std::find_if(cbegin(vec), cend(vec), isEven);
+    (result != end(vec)) ? std::cout << "Student founded in data base!\n" << *result << '\n' : std::cout << "Such student does not exist!\n";
+}
+
+void dataBase::deleteByIndexNumber (std::vector<Student *>& vec) {
+    std::string indexNo{};
+    std::cout << "Type index no to find and delete: ";
+    std::cin >> indexNo;
+    auto isEven = [&indexNo](Student* student){return student->getIndexNo() == indexNo;};
+    auto result = std::find_if(begin(vec), end(vec), isEven);
+    //vec.erase(std::remove(begin(vec), end(vec), result), end(vec));
+    if(isEven; result !=end(vec)) {
+        std::cout << "Student founded in data base!\n" << *result << '\n';
+        for( auto & el : vec) {
+            *result = nullptr;
+            delete *result;
+        }
+        vec.erase(std::remove(begin(vec), end(vec), nullptr), end(vec));
+    } else {
+        std::cout << "Such student does not exist!\n";
+    }
 }

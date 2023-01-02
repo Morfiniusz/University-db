@@ -10,7 +10,7 @@ public:
 
     std::string getName() const {return name_;};
     std::string getSurname() const {return surname_;};
-    std::string getSex() const {return sex_;};
+    std::string getGender() const {return gender_;};
     std::string getPESEL() const {return PESEL_;};
     std::string getStreet() const {return street_;};
     std::string getPostalCode() const {return postalCode_;};
@@ -18,7 +18,7 @@ public:
 
     void setName(const std::string& name) {name_ = name;};
     void setSurname(const std::string& surname) {surname_ = surname;};
-    void setSex(const std::string& sex) {sex_ = sex;};
+    void setGender(const std::string& gender) {gender_ = gender;};
     void setPESEL(const std::string& PESEL) {PESEL_ = PESEL;};
     void setStreet(const std::string& street) {street_ = street;};
     void setPostalCode(const std::string& postalCode) {postalCode_ = postalCode;};
@@ -27,7 +27,7 @@ public:
 private:
     std::string name_ {};
     std::string surname_{};
-    std::string sex_{};
+    std::string gender_{};
     std::string PESEL_{};
     std::string street_{};
     std::string postalCode_{};
