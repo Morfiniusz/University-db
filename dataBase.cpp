@@ -45,8 +45,6 @@ bool peselValidation(const std::string& peselNo) {
     return false;
 }
 
-
-
 void dataBase::CreateStudent(std::vector<Student *>& vec) {
     Student* student = new Student();
     std::cout << "Type name: ";
@@ -57,10 +55,6 @@ void dataBase::CreateStudent(std::vector<Student *>& vec) {
     std::string surname{};
     std::cin >> surname;
     student->setSurname(surname);
-    std::cout << "Type gender: ";
-    std::string gender{};
-    std::cin >> gender;
-    student->setGender(gender);
     std::cout << "Type PESEL no: ";
     std::string pesel{};
     std::cin >> pesel;
@@ -70,6 +64,7 @@ void dataBase::CreateStudent(std::vector<Student *>& vec) {
         std::cin >> pesel;
     }
     student->setPESEL(pesel);
+    student->setGender(pesel);
     std::cout << "Type street: ";
     std::string street{};
     std::cin.ignore();
@@ -142,7 +137,6 @@ void dataBase::deleteByIndexNumber (std::vector<Student *>& vec) {
     std::cin >> indexNo;
     auto isEven = [&indexNo](Student* student){return student->getIndexNo() == indexNo;};
     auto result = std::find_if(begin(vec), end(vec), isEven);
-    //vec.erase(std::remove(begin(vec), end(vec), result), end(vec));
     if(isEven; result !=end(vec)) {
         std::cout << "Student founded in data base!\n" << *result << '\n';
         for( auto & el : vec) {

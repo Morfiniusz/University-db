@@ -10,3 +10,12 @@ Person::Person(std::string name, std::string surname,std::string gender, std::st
 ,   postalCode_(postalCode)
 ,   city_(city)
 {}
+
+void Person::setGender(const std::string& PESEL) {
+    if (PESEL[PESEL.length() - 2] % 2 == 0) {
+        gender_ = "female";
+    }
+    else {
+        gender_ = "male";
+    } 
+}

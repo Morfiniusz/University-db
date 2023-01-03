@@ -2,6 +2,7 @@
 #include "student.hpp"
 #include "dataBase.hpp"
 #include <algorithm>
+#include <cmath>
 #include <ios>
 #include <iostream>
 #include <list>
@@ -9,6 +10,7 @@
 #include <numeric>
 #include <string>
 #include <vector>
+
 
 int main() {
     Student student1 {"Łukasz", "Meisnerowski", "male", "11111111111", "Obornicka 6/15", "64-500", "Szamotuły", "123455"};
@@ -31,8 +33,8 @@ int main() {
     //sort(begin(vec), end(vec), [](Student* student1, Student* student2){return student1->getSurname() < student2->getSurname();});
     dataBase db(vec);
     db.CreateStudent(vec);
-    db.CreateStudent(vec);
-    db.CreateStudent(vec);
+    //db.CreateStudent(vec);
+    //db.CreateStudent(vec);
     std::cout << "Sorting by surname!\n";
     db.sortBySurname(vec);
     std::cout << "Print: \n";
@@ -50,6 +52,8 @@ int main() {
     db.deleteByIndexNumber(vec);
     std::cout << "Print: \n";
     db.printStudentData(vec);
+
+
 
     return 0;
 }
