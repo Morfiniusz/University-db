@@ -18,8 +18,8 @@ public:
 
     void setName(const std::string& name) {name_ = name;};
     void setSurname(const std::string& surname) {surname_ = surname;};
-    void setGender(const std::string& gender) {gender_ = gender;};
     void setPESEL(const std::string& PESEL) {PESEL_ = PESEL;};
+    void setGender(const std::string& );
     void setStreet(const std::string& street) {street_ = street;};
     void setPostalCode(const std::string& postalCode) {postalCode_ = postalCode;};
     void setCity(const std::string& city) {city_ = city;};
