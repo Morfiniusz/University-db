@@ -1,6 +1,6 @@
-#include "person.hpp"
-#include "student.hpp"
-#include "dataBase.hpp"
+#include "headers/person.hpp"
+#include "headers/student.hpp"
+#include "headers/dataBase.hpp"
 #include <algorithm>
 #include <cmath>
 #include <ios>

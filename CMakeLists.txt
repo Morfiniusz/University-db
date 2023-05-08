@@ -12,9 +12,9 @@ set(FLAGS
 )
 
 set(SRC 
-    person.cpp
-    student.cpp
-    dataBase.cpp
+    src/person.cpp
+    src/student.cpp
+    src/dataBase.cpp
 )
 
 add_executable(${PROJECT_NAME} main.cpp)
