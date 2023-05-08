@@ -12,7 +12,12 @@ public:
     dataBase (std::vector<Student *> dataBase) 
     : dataBase_(dataBase)
     {}
-    ~dataBase(){}
+    ~dataBase(){
+        for (auto& el : dataBase_) {
+                delete el;
+                el = nullptr;
+        }
+    }
 
     void CreateStudent(std::vector<Student *>& );
     void printStudentData(const std::vector<Student *>& ) const;
@@ -23,7 +28,7 @@ public:
     void deleteByIndexNumber (std::vector<Student *>& );
 
 private:
-    std::vector<Student *> dataBase_ {};
+    std::vector<Student *> dataBase_;
 }; 
 
 #endif

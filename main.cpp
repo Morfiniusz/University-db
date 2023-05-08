@@ -32,7 +32,7 @@ int main() {
     vec.push_back(&student7);
     //sort(begin(vec), end(vec), [](Student* student1, Student* student2){return student1->getSurname() < student2->getSurname();});
     dataBase db(vec);
-    db.CreateStudent(vec);
+    //db.CreateStudent(vec);
     //db.CreateStudent(vec);
     //db.CreateStudent(vec);
     std::cout << "Sorting by surname!\n";
