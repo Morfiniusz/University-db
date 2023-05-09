@@ -1,12 +1,21 @@
 #ifndef USER_INTERFACE_HPP
 #define USER_INTERFACE_HPP
 
-class UserInterface {
+#include "../headers/dataBase.hpp"
+#include "../headers/enumUiAction.hpp"
+#include <iostream>
+
+class UserInterface : public DataBase {
 public:
-    UserInterface() = default;
-    ~UserInterface(){}
+    UserInterface(){
+        std::cout << "UI C'tor called\n";
+    }
+    ~UserInterface(){
+        std::cout << "UI D'tor called\n";
+    }
 
     void showUI();
+    void actionUI(const UiAction&, DataBase&);
 
 };
 

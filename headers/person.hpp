@@ -6,9 +6,9 @@
 
 class Person {
 public:
-    Person(){}
+    Person(){std::cout << "Person C'tor called\n";}
     Person (std::string, std::string, std::string, std::string, std::string, std::string, std::string);
-    ~Person(){}
+    ~Person(){std::cout << "Person D'tor called\n";}
 
     std::string getName() const {return name_;};
     std::string getSurname() const {return surname_;};

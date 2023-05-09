@@ -2,30 +2,27 @@
 #define DATABASE_HPP
 
 #include "../headers/student.hpp"
-#include <algorithm>
-#include <ostream>
+#include <iostream>
 #include <vector>
 
 class DataBase : public Student {
 public:
-    DataBase(){}
+    DataBase(){std::cout << "DB C'tor called\n";}
     DataBase (std::vector<Student *> dataBase) 
     : dataBase_(dataBase)
     {}
     ~DataBase(){
-        for (auto& el : dataBase_) {
-                delete el;
-                el = nullptr;
-        }
+        std::cout << "DB D'tor called\n";
     }
 
-    void CreateStudent(std::vector<Student *>& );
-    void printStudentData(const std::vector<Student *>& ) const;
-    void sortBySurname(std::vector<Student *>& ) const;
-    void findBySurname(const std::vector<Student* >& ) const;
-    void sortByPESEL(std::vector<Student *>& ) const;
-    void findByPESEL(const std::vector<Student* >& ) const;
-    void deleteByIndexNumber (std::vector<Student *>& );
+    void CreateStudent();
+    void AddNewStudent(Student& student);
+    void printStudentData();
+    void sortBySurname();
+    void findBySurname();
+    void sortByPESEL();
+    void findByPESEL();
+    void deleteByIndexNumber();
 
 private:
     std::vector<Student *> dataBase_;
