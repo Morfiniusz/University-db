@@ -17,10 +17,6 @@
 int main() {
     UserInterface UI;
     DataBase db;
-    UI.showUI();
-    int x{};
-    std::cin >> x;
-    UI.actionUI(static_cast<UiAction>(x), db);
 
     Student student1 {"Łukasz", "Meisnerowski", "male", "11111111111", "Obornicka 6/15", "64-500", "Szamotuły", "123455"};
     Student student2 {"Katarzyna", "Januszko", "female", "22222222222", "Januszkowa 4/23", "88-666", "Wrocław", "778899"};
@@ -36,33 +32,14 @@ int main() {
     db.AddNewStudent(student5);
     db.AddNewStudent(student6);
     db.AddNewStudent(student7);
-    db.printStudentData();
-
-
-    // //sort(begin(vec), end(vec), [](Student* student1, Student* student2){return student1->getSurname() < student2->getSurname();});
-    // dataBase db(vec);
-    // //db.CreateStudent(vec);
-    // //db.CreateStudent(vec);
-    // //db.CreateStudent(vec);
-    // std::cout << "Sorting by surname!\n";
-    // db.sortBySurname(vec);
-    // std::cout << "Print: \n";
-    // db.printStudentData(vec);
-    // //db.Print(vec);
-    // std::cout << "Finding by surname\n";
-    // db.findBySurname(vec);
-    // std::cout << "Sorting by PESEL! \n";
-    // db.sortByPESEL(vec);
-    // std::cout << "Print: \n";
-    // db.printStudentData(vec);
-    // std::cout << "Finding by PESEL!\n";
-    // db.findByPESEL(vec);
-    // std::cout << "Delete by index no!\n";
-    // db.deleteByIndexNumber(vec);
-    // std::cout << "Print: \n";
-    // db.printStudentData(vec);
 
 
 
+    int x{0};
+    while(x != 8) {
+        UI.showUI();
+        std::cin >> x;
+        UI.actionUI(static_cast<UiAction>(x), db);
+    }
     return 0;
 }

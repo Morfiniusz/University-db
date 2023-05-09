@@ -3,6 +3,7 @@
 
 #include "../headers/dataBase.hpp"
 #include "../headers/enumUiAction.hpp"
+#include "../headers/enumStatusCode.hpp"
 #include <iostream>
 
 class UserInterface : public DataBase {
@@ -15,8 +16,7 @@ public:
     }
 
     void showUI();
-    void actionUI(const UiAction&, DataBase&);
-
+    StatusCode actionUI(const UiAction&, DataBase&);
 };
 
 #endif

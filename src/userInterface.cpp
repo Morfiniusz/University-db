@@ -27,40 +27,36 @@ void UserInterface::showUI() {
               << "Enter option: ";
 }
 
-void UserInterface::actionUI(const UiAction& action, DataBase& db){
-    switch (action)
-    {
-    case UiAction::addNewStudent : {
-        db.CreateStudent();
-        break;
+StatusCode UserInterface::actionUI(const UiAction& action, DataBase& db){
+    switch (action) {
+        case UiAction::addNewStudent : {
+            db.CreateStudent();
+            return StatusCode::Success;
+        }
+        case UiAction::showDataBase : {
+            db.printStudentData();
+            return StatusCode::Success;
+        }
+        case UiAction::searchBySurname : {
+            db.findBySurname();
+            return StatusCode::Success;
+        }
+        case UiAction::sortByPesel : {
+            db.sortByPESEL();
+            db.printStudentData();
+            return StatusCode::Success;
+        }
+        case UiAction::sortBySurname : {
+            db.sortBySurname();
+            db.printStudentData();
+            return StatusCode::Success;
+        }
+        case UiAction::deleteByIndexNo : {
+            db.deleteByIndexNumber();
+            return StatusCode::Success;
+        }
+        default:
+            return StatusCode::Fail;
     }
-    case UiAction::showDataBase : {
-        db.printStudentData();
-        break;
-    }
-    case UiAction::searchBySurname : {
-        db.findBySurname();
-        break;
-    }
-    case UiAction::sortByPesel : {
-        db.sortByPESEL();
-        db.printStudentData();
-        break;
-    }
-    case UiAction::sortBySurname : {
-        db.sortBySurname();
-        db.printStudentData();
-        break;
-    }
-    case UiAction::deleteByIndexNo : {
-        db.deleteByIndexNumber();
-        break;
-    }
-    case UiAction::quit : {
-        std::cout << "Dopisz funkcję zamykania programu\n"; // TO DO
-        break;
-    }
-    default:
-        break;
-    }
+    return StatusCode::Fail;
 }
