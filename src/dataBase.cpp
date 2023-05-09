@@ -46,7 +46,7 @@ bool peselValidation(const std::string& peselNo) {
     return false;
 }
 
-void dataBase::CreateStudent(std::vector<Student *>& vec) {
+void DataBase::CreateStudent(std::vector<Student *>& vec) {
     Student* student = new Student();
     std::cout << "Type name: ";
     std::string name{};
@@ -96,20 +96,20 @@ void dataBase::CreateStudent(std::vector<Student *>& vec) {
     vec.push_back(student);
 }
 
-void dataBase::printStudentData(const std::vector<Student *>& vec) const {
+void DataBase::printStudentData(const std::vector<Student *>& vec) const {
     for (const auto& el : vec) {
         std::cout << el;
     }
     std::cout << '\n';
 }
 
-void dataBase::sortBySurname(std::vector<Student *>& vec) const {
+void DataBase::sortBySurname(std::vector<Student *>& vec) const {
     auto findSurname = [](const Student* student1,const Student* student2){return student1->getSurname() < student2->getSurname(); };
     std::sort(begin(vec), end(vec), findSurname);
 }
 
 
-void dataBase::findBySurname(const std::vector<Student* >& vec) const {
+void DataBase::findBySurname(const std::vector<Student* >& vec) const {
     std::string surname{};
     std::cout << "Type surname to find: ";
     std::cin >> surname;
@@ -118,12 +118,12 @@ void dataBase::findBySurname(const std::vector<Student* >& vec) const {
     (result != end(vec)) ? std::cout << "Student founded in data base!\n" << *result << '\n' : std::cout << "Such student does not exist!\n";
 }
 
-void dataBase::sortByPESEL(std::vector<Student *>& vec) const {
+void DataBase::sortByPESEL(std::vector<Student *>& vec) const {
     auto findPESEL = [](const Student* student1,const Student* student2){return student1->getPESEL() < student2->getPESEL(); };
     std::sort(begin(vec), end(vec), findPESEL);
 }
 
-void dataBase::findByPESEL(const std::vector<Student* >& vec) const {
+void DataBase::findByPESEL(const std::vector<Student* >& vec) const {
     std::string pesel{};
     std::cout << "Type PESEL to find: "; 
     std::cin >> pesel;
@@ -132,7 +132,7 @@ void dataBase::findByPESEL(const std::vector<Student* >& vec) const {
     (result != end(vec)) ? std::cout << "Student founded in data base!\n" << *result << '\n' : std::cout << "Such student does not exist!\n";
 }
 
-void dataBase::deleteByIndexNumber (std::vector<Student *>& vec) {
+void DataBase::deleteByIndexNumber (std::vector<Student *>& vec) {
     std::string indexNo{};
     std::cout << "Type index no to find and delete: ";
     std::cin >> indexNo;

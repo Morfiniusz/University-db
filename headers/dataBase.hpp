@@ -1,18 +1,18 @@
 #ifndef DATABASE_HPP
 #define DATABASE_HPP
 
-#include "student.hpp"
+#include "../headers/student.hpp"
 #include <algorithm>
 #include <ostream>
 #include <vector>
 
-class dataBase : public Student {
+class DataBase : public Student {
 public:
-    dataBase(){}
-    dataBase (std::vector<Student *> dataBase) 
+    DataBase(){}
+    DataBase (std::vector<Student *> dataBase) 
     : dataBase_(dataBase)
     {}
-    ~dataBase(){
+    ~DataBase(){
         for (auto& el : dataBase_) {
                 delete el;
                 el = nullptr;

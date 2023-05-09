@@ -14,6 +14,9 @@
 
 
 int main() {
+    DataBase db;
+    
+    UserInterface UI;
     // Student student1 {"Łukasz", "Meisnerowski", "male", "11111111111", "Obornicka 6/15", "64-500", "Szamotuły", "123455"};
     // Student student2 {"Katarzyna", "Januszko", "female", "22222222222", "Januszkowa 4/23", "88-666", "Wrocław", "778899"};
     // Student student3 {"Bartek", "Marciniak", "male", "33333333333", "Marciniakowa 4", "55-111", "Poznań", "556688"};
