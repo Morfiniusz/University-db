@@ -23,7 +23,6 @@ set(SRC
     headers/userInterface.hpp
     headers/enumStatusCode.hpp
     headers/enumUiAction.hpp
-
 )
 
 add_executable(${PROJECT_NAME} main.cpp)
