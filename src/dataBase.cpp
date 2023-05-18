@@ -1,4 +1,4 @@
-#include "../headers/dataBase.hpp"
+#include "../inc/dataBase.hpp"
 #include <algorithm>
 #include <array>
 #include <numeric>
@@ -46,7 +46,7 @@ bool peselValidation(const std::string& peselNo) {
     return false;
 }
 
-void dataBase::CreateStudent(std::vector<Student *>& vec) {
+void DataBase::CreateStudent() {
     Student* student = new Student();
     std::cout << "Type name: ";
     std::string name{};
@@ -93,59 +93,65 @@ void dataBase::CreateStudent(std::vector<Student *>& vec) {
         std::cin >> indexNo;
     }
     student->setIndexNo(indexNo);
-    vec.push_back(student);
+    dataBase_.push_back(student);
+
 }
 
-void dataBase::printStudentData(const std::vector<Student *>& vec) const {
-    for (const auto& el : vec) {
+void DataBase::printStudentData() {
+    for (const auto& el : dataBase_) {
         std::cout << el;
     }
     std::cout << '\n';
 }
 
-void dataBase::sortBySurname(std::vector<Student *>& vec) const {
+void DataBase::sortBySurname() {
     auto findSurname = [](const Student* student1,const Student* student2){return student1->getSurname() < student2->getSurname(); };
-    std::sort(begin(vec), end(vec), findSurname);
+    std::sort(begin(dataBase_), end(dataBase_), findSurname);
 }
 
 
-void dataBase::findBySurname(const std::vector<Student* >& vec) const {
+void DataBase::findBySurname(){
     std::string surname{};
     std::cout << "Type surname to find: ";
     std::cin >> surname;
     auto isEven = [&surname](Student* student){return student->getSurname() == surname;};
-    auto result = std::find_if(cbegin(vec), cend(vec), isEven);
-    (result != end(vec)) ? std::cout << "Student founded in data base!\n" << *result << '\n' : std::cout << "Such student does not exist!\n";
+    auto result = std::find_if(cbegin(dataBase_), cend(dataBase_), isEven);
+    (result != end(dataBase_)) ? std::cout << "Student founded in data base!\n" << *result << '\n' : std::cout << "Such student does not exist!\n";
 }
 
-void dataBase::sortByPESEL(std::vector<Student *>& vec) const {
+void DataBase::sortByPESEL() {
     auto findPESEL = [](const Student* student1,const Student* student2){return student1->getPESEL() < student2->getPESEL(); };
-    std::sort(begin(vec), end(vec), findPESEL);
+    std::sort(begin(dataBase_), end(dataBase_), findPESEL);
 }
 
-void dataBase::findByPESEL(const std::vector<Student* >& vec) const {
+void DataBase::findByPESEL() {
     std::string pesel{};
     std::cout << "Type PESEL to find: "; 
     std::cin >> pesel;
     auto isEven = [&pesel](Student* student){return student->getPESEL() == pesel;};
-    auto result = std::find_if(cbegin(vec), cend(vec), isEven);
-    (result != end(vec)) ? std::cout << "Student founded in data base!\n" << *result << '\n' : std::cout << "Such student does not exist!\n";
+    auto result = std::find_if(cbegin(dataBase_), cend(dataBase_), isEven);
+    (result != end(dataBase_)) ? std::cout << "Student founded in data base!\n" << *result << '\n' : std::cout << "Such student does not exist!\n";
 }
 
-void dataBase::deleteByIndexNumber (std::vector<Student *>& vec) {
+void DataBase::deleteByIndexNumber () {
     std::string indexNo{};
     std::cout << "Type index no to find and delete: ";
     std::cin >> indexNo;
     auto isEven = [&indexNo](Student* student){return student->getIndexNo() == indexNo;};
-    auto result = std::find_if(begin(vec), end(vec), isEven);
-    if(isEven; result !=end(vec)) {
+    auto result = std::find_if(begin(dataBase_), end(dataBase_), isEven);
+    if(isEven; result !=end(dataBase_)) {
         std::cout << "Student founded in data base!\n" << *result << '\n';
-        for( auto & el : vec) {
+        for( auto & el : dataBase_) {
             *result = nullptr;
             delete *result;
         }
-        vec.erase(std::remove(begin(vec), end(vec), nullptr), end(vec));
+        dataBase_.erase(std::remove(begin(dataBase_), end(dataBase_), nullptr), end(dataBase_));
+        dataBase_.shrink_to_fit();
     } else {
         std::cout << "Such student does not exist!\n";
     }
+}
+
+void DataBase::AddNewStudent(Student& student) {
+    dataBase_.push_back(&student);
 }
