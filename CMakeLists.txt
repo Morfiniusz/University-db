@@ -17,12 +17,12 @@ set(SRC
     src/student.cpp
     src/dataBase.cpp
     src/userInterface.cpp
-    headers/person.hpp
-    headers/student.hpp
-    headers/dataBase.hpp
-    headers/userInterface.hpp
-    headers/enumStatusCode.hpp
-    headers/enumUiAction.hpp
+    inc/person.hpp
+    inc/enumUiAction.hpp
+    inc/dataBase.hpp
+    inc/userInterface.hpp
+    inc/student.hpp
+    inc/enumStatusCode.hpp
 )
 
 add_executable(${PROJECT_NAME} main.cpp)

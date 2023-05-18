@@ -1,4 +1,4 @@
-#include "../headers/student.hpp"
+#include "../inc/student.hpp"
 #include <iostream>
 #include <string>
 

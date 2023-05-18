@@ -1,8 +1,8 @@
-#include "headers/dataBase.hpp"
-#include "headers/person.hpp"
-#include "headers/student.hpp"
-#include "headers/userInterface.hpp"
-#include "headers/enumUiAction.hpp"
+#include "inc/dataBase.hpp"
+#include "inc/person.hpp"
+#include "inc/student.hpp"
+#include "inc/userInterface.hpp"
+#include "inc/enumUiAction.hpp"
 #include <algorithm>
 #include <cmath>
 #include <ios>

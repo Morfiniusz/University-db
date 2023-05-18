@@ -1,7 +1,7 @@
-#include "../headers/userInterface.hpp"
-#include "../headers/dataBase.hpp"
-#include "../headers/enumUiAction.hpp"
-#include "../headers/enumStatusCode.hpp"
+#include "../inc/userInterface.hpp"
+#include "../inc/dataBase.hpp"
+#include "../inc/enumUiAction.hpp"
+#include "../inc/enumStatusCode.hpp"
 #include <iostream>
 
 // enum class UiAction {

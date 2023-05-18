@@ -1,9 +1,9 @@
 #ifndef USER_INTERFACE_HPP
 #define USER_INTERFACE_HPP
 
-#include "../headers/dataBase.hpp"
-#include "../headers/enumUiAction.hpp"
-#include "../headers/enumStatusCode.hpp"
+#include "../inc/dataBase.hpp"
+#include "../inc/enumUiAction.hpp"
+#include "../inc/enumStatusCode.hpp"
 #include <iostream>
 
 class UserInterface : public DataBase {

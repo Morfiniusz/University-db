@@ -1,4 +1,4 @@
-#include "../headers/dataBase.hpp"
+#include "../inc/dataBase.hpp"
 #include <algorithm>
 #include <array>
 #include <numeric>

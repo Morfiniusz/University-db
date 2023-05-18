@@ -1,7 +1,7 @@
 #ifndef DATABASE_HPP
 #define DATABASE_HPP
 
-#include "../headers/student.hpp"
+#include "../inc/student.hpp"
 #include <iostream>
 #include <vector>
 
