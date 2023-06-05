@@ -1,0 +1,7 @@
+Łukasz, Meisnerowski, male, 11111111111, Obornicka 6/15, 64-500, Szamotuły, 123455
+Katarzyna, Januszko, female, 22222222222", Januszkowa 4/23, 88-666, Wrocław, 778899
+Bartek, Marciniak, male, 33333333333, Marciniakowa 4, 55-111, Poznań, 556688
+Gustaw, Gustawski, male, 44444444444, Gustawska 3, 44-331, PomyloneGary, 112234
+Klementyna, Klementyńska, female, 55555555555, Klementyńska 18, 88-666, Wrocław, 156680
+Konrad, Konradzki, male, 66666666666, Konradzka 12, 33-222, Białystok, 459981
+Zuzanna, Zuzanowska, female, 77777777777, Zuzannowa 66, 22-888, Gostyń, 001287

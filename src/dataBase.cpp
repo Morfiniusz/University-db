@@ -1,6 +1,7 @@
 #include "../inc/dataBase.hpp"
 #include <algorithm>
 #include <array>
+#include <filesystem>
 #include <numeric>
 #include <ostream>
 #include <vector>
@@ -46,7 +47,7 @@ bool peselValidation(const std::string& peselNo) {
     return false;
 }
 
-void DataBase::CreateStudent() {
+void DataBase::createStudent() {
     Student* student = new Student();
     std::cout << "Type name: ";
     std::string name{};
@@ -152,6 +153,10 @@ void DataBase::deleteByIndexNumber () {
     }
 }
 
-void DataBase::AddNewStudent(Student& student) {
+void DataBase::addNewStudent(Student& student) {
     dataBase_.push_back(&student);
+}
+
+void DataBase::showPath() {
+    std::cout << dataBaseFilePath_ << '\n';
 }

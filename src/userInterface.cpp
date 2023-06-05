@@ -30,7 +30,7 @@ void UserInterface::showUI() {
 StatusCode UserInterface::actionUI(const UiAction& action, DataBase& db){
     switch (action) {
         case UiAction::addNewStudent : {
-            db.CreateStudent();
+            db.createStudent();
             return StatusCode::Success;
         }
         case UiAction::showDataBase : {
